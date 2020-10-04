@@ -1,0 +1,6 @@
+pip install tf2onnx
+pip install onnxruntime
+
+export CUDA_VISIBLE_DEVICES=0
+
+python -m tf2onnx.convert --graphdef mnist.pb --output mnist.onnx --fold_const --opset 10 --inputs x:0,y_:0 --outputs accuracy:0
